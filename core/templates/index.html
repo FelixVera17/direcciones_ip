@@ -7,7 +7,10 @@
 </head>
 <body>
     <h1>direcciones ip</h1>
-    <a href="{% url 'register_ip' %}">registrar direcciones ip</a>
-    <a href="{% url 'search_ip' %}">buscar direcciones ip</a>    
+    <br>
+    <div class="btn-group">
+        <a href="{% url 'register_ip' %}" class="btn btn-register">Registrar direcciones IP</a>
+        <a href="{% url 'search_ip' %}" class="btn btn-search">Buscar direcciones IP</a>
+    </div>    
 </body>
 </html>
