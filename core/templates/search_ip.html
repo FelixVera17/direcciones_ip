@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>buscar direcciones ip</title>
+</head>
+<body>
+    <h1>buscar direcciones ip</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>direccion ip</th>
+                <th>user id</th>
+            </tr>
+        </thead>
+        </tbody>
+        {% for mac_address in mac_addresses%}
+        <tr>
+            <td>{{ mac_address.id }}</td>
+            <td>{{ mac_address.ip_address }}</td>
+            <td>{{ mac_address.id_user_id }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
