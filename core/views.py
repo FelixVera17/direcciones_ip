@@ -13,7 +13,7 @@ def register_ip(request):
         return redirect('index')
     return render(request, 'register_ip.html')
 def search_ip(request):
-    mac_addresess = MacAddress.objects.all()
-    return render (request, 'search_ip.html', {'mac_addresses': mac_addresess})
+    mac_addresses = MacAddress.objects.all()
+    return render (request, 'search_ip.html', {'mac_addresses': mac_addresses})
 
 
