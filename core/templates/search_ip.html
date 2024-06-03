@@ -10,7 +10,7 @@
             <tr>
                 <th>id</th>
                 <th>direccion ip</th>
-                <th>user id</th>
+                <th>username</th>
             </tr>
         </thead>
         </tbody>
@@ -18,7 +18,7 @@
         <tr>
             <td>{{ mac_address.id }}</td>
             <td>{{ mac_address.ip_address }}</td>
-            <td>{{ mac_address.id_user_id }}</td>
+            <td>{{ mac_address.id_user.username }}</td>
         </tr>
         {% endfor %}
         </tbody>
