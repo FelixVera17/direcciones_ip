@@ -21,7 +21,8 @@
                 <th>direccion ip</th>
                 <th>username</th>
                 <th>nombre completo</th>
-                <th>fecha de registro</th>  
+                <th>fecha de registro</th> 
+                <th>sucursal</th>
             </tr>
         </thead>
         </tbody>
@@ -32,6 +33,7 @@
             <td>{{ mac_address.id_user.username }}</td>
             <td>{{ mac_address.id_user.name }}</td>
             <td>{{ mac_address.date_registered }}</td>
+            <td>{{ mac_address.sucursal }}</td>
 
         </tr>
         {% endfor %}

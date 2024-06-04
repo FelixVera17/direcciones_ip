@@ -28,8 +28,17 @@ def search_ip(request):
     else:
         mac_addresses = mac_addresses = MacAddress.objects.all()
         
-    
-    
+    for direccion_mac in mac_addresses:
+        if direccion_mac.ip_address.split('.')[2] == '0':
+            direccion_mac.sucursal = 'matriz'
+        elif direccion_mac.ip_address.split('.')[2] == '2':
+            direccion_mac.sucursal = 'sucursal 2'  
+        elif direccion_mac.ip_address.split('.')[2] == '3':
+            direccion_mac.sucursal = 'sucursal 1'  
+        elif direccion_mac.ip_address.split('.')[2] == '4':
+            direccion_mac.sucursal = 'sucursal 3'
+        else:
+            direccion_mac.sucursal = 'N/A'
     return render(request, 'search_ip.html', {'mac_addresses': mac_addresses})
 
 
