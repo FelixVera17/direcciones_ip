@@ -8,6 +8,12 @@
 </head>
 <body>
     <h1>buscar direcciones ip</h1>
+    <form method="GET" action=" {% url 'search_ip' %}">
+        <label for="user_name">Filtrar por nombre de usuario</label>
+        <input type="text" id="user_name" name="user_name"
+        placeholder="ingrese el nombre de usuario">
+        <button type="submit">buscar</button>
+    </form>
     <table>
         <thead>
             <tr>

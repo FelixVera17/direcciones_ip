@@ -22,7 +22,12 @@ def register_ip(request):
     return render(request, 'register_ip.html')
 
 def search_ip(request):
-    mac_addresses = MacAddress.objects.all()
+    user_name= request.GET.get('user_name')
+    if user_name:
+        mac_addresses = MacAddress.objects.filter(id_user__username__icontains=user_name)
+    else:
+        mac_addresses = mac_addresses = MacAddress.objects.all()
+    
     return render(request, 'search_ip.html', {'mac_addresses': mac_addresses})
 
 
