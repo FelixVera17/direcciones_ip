@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import User, MacAddress
-
+from django.utils import timezone
 def index(request):
     return render(request, 'index.html')
 
@@ -15,7 +15,7 @@ def register_ip(request):
             defaults={'name': user_fullname}
         )
 
-        mac_address = MacAddress(ip_address=ip_address, id_user=user)
+        mac_address = MacAddress(ip_address=ip_address, id_user=user,date_registered=timezone.now())
         mac_address.save()
         return redirect('index')
 
