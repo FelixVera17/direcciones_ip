@@ -27,6 +27,8 @@ def search_ip(request):
         mac_addresses = MacAddress.objects.filter(id_user__username__icontains=user_name)
     else:
         mac_addresses = mac_addresses = MacAddress.objects.all()
+        
+    
     
     return render(request, 'search_ip.html', {'mac_addresses': mac_addresses})
 
