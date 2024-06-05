@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import User, MacAddress
 from django.utils import timezone
 def index(request):
@@ -40,6 +40,20 @@ def search_ip(request):
         else:
             direccion_mac.sucursal = 'N/A'
     return render(request, 'search_ip.html', {'mac_addresses': mac_addresses})
+def edit_ip(request, mac_id):
+    mac_address = get_object_or_404(MacAddress, id=mac_id)
+    if request.method == 'POST':
+        ip_address = request.POST.get('ip_address')
+        user_name = request.POST.get('user_name')
+        user_fullname = request.POST.get('user_fullname')
 
-
+        user, created= User.objects.get_or_create(
+            username= user_name,
+            defaults= {'name': user_fullname}
+        )
+        mac_address.ip_address = ip_address
+        mac_address.id_user = user
+        mac_address.save()
+        return redirect ('search_ip')
+    return render (request, 'edit_ip.html',{'mac_address': mac_address})
 
