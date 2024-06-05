@@ -30,7 +30,7 @@
         {% for mac_address in mac_addresses %}
         <tr>
             <td>{{ mac_address.id }}</td>
-            <td>{{ mac_address.ip_address }}</td>
+            <td><a href="https://192.168.3.1/ng/system/dashboard/5?vdom={{ mac_address.ip_address }}" target="_blank">{{ mac_address.ip_address }}</a></td>
             <td>{{ mac_address.id_user.username }}</td>
             <td>{{ mac_address.id_user.name }}</td>
             <td>{{ mac_address.date_registered }}</td>
